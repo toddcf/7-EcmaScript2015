@@ -136,6 +136,11 @@ console.log( n.endsWith( "th" ) );
 // This will display TRUE:
 console.log( n.includes( "Sm" ) );
 
+// Repeat:
+
+// The number in the parentheses is the number of times you want it to repeat.
+// This will print "John" five times:
+console.log( firstName.repeat( 5 ) );
 
 
 
