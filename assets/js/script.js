@@ -33,9 +33,11 @@ console.log(name6);
 
 
 // ES5:
-
+/*
 function driversLicense5( passedTest ) {
 	if ( passedTest ) {
+		// Trying to use a variable before it's been declared will show "undefined" in ES5:
+		console.log( firstName );
 		var firstName = "John";
 		var yearOfBirth = 1990;
 	}
@@ -48,6 +50,9 @@ driversLicense5( true );
 // ES6:
 
 function driversLicense6( passedTest ) {
+	// In ES6, trying to use a variable before it's been declared will throw an error. This is because of the "temporal debt zone."
+	// The variable has been hoisted, but still cannot be accessed before it's been declared.
+	console.log( firstName );
 	if ( passedTest ) {
 		let firstName = "John";
 		const yearOfBirth = 1990;
@@ -60,3 +65,12 @@ function driversLicense6( passedTest ) {
 };
 
 driversLicense6( true );
+*/
+
+let i = 23;
+
+for ( let i = 0; i < 5; i++ ) {
+	console.log( "Inside for loop: " + i );
+}
+
+console.log( "Outside for loop: " + i );
