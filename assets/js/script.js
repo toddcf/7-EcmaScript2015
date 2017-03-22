@@ -97,7 +97,7 @@ console.log( c );
 */
 
 // Strings
-
+/*
 let firstName		= "John";
 let lastName		= "Smith";
 const yearOfBirth	= 1990;
@@ -144,6 +144,42 @@ console.log( firstName.repeat( 5 ) );
 
 // If you want a space between the repeats, you must write a template literal:
 console.log( `${ firstName } `.repeat( 5 ) );
+*/
+
+// Arrow Functions
+
+const years = [ 1990, 1965, 1982, 1937 ];
+
+// ES5:
+// Use map to create a new array of ages and store it in ages5:
+var ages5 = years.map( function( el ) {
+	return 2017 - el;
+});
+
+console.log( ages5 );
+
+// ES6 uses an "arrow function," which is much more concise:
+const ages6 = years.map( el => 2017 - el );
+
+console.log( ages6 );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
