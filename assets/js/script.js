@@ -7,11 +7,11 @@
 
 
 // Variable Declaractions: LET and CONST
-
+/*
 // ES5:
 
 // Variables declared in ES5 are "function scoped," which means they can be changed.
-/*
+
 var name5 = "Jane Smith";
 var age5 = 23;
 name5 = "Jane Miller";
@@ -20,6 +20,7 @@ console.log(name5);
 // ES6:
 
 // Variables declared in ES6 are "block scoped," and use either LET or CONST.
+	// "Block scope" refers to the block -- or the code that is wrapped inside curly braces.
 // let is like var, and can be changed later.
 // const is for values we don't want to change.
 
@@ -52,7 +53,10 @@ function driversLicense6( passedTest ) {
 		const yearOfBirth = 1990;
 	}
 
+	// This won't work in ES6, because is is referring to variables inside the block scope, which it does not have access to:
 	console.log( firstName + ", born in " + yearOfBirth + ", is now officially allowed to drive a car." );
+	// One partial workaround is to declare your let variables outside the block scope. The code inside the block scope will have access to them.
+	// However, you cannot declare a const variable outside the block and then assign its value inside the block. You must assign its value outside the block when you declare it.
 };
 
 driversLicense6( true );
