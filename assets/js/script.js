@@ -142,8 +142,8 @@ console.log( n.includes( "Sm" ) );
 // This will print "John" five times:
 console.log( firstName.repeat( 5 ) );
 
-
-
+// If you want a space between the repeats, you must write a template literal:
+console.log( `${ firstName } `.repeat( 5 ) );
 
 
 
