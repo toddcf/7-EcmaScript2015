@@ -67,6 +67,9 @@ function driversLicense6( passedTest ) {
 driversLicense6( true );
 */
 
+// In this example, the i variable outside the for loop is a completely different i than the one declared and used inside the for loop.
+// This is because of the block scope. Which provides DATA PRIVACY.
+/*
 let i = 23;
 
 for ( let i = 0; i < 5; i++ ) {
@@ -74,3 +77,20 @@ for ( let i = 0; i < 5; i++ ) {
 }
 
 console.log( "Outside for loop: " + i );
+*/
+
+
+// Blocks and IIFEs:
+
+// You can create a block simply by putting code inside curly braces:
+{
+	const	a = 1;
+	let		b = 2;
+	var		c = 3;
+}
+
+// This won't work, because the variables are not accessible outside the block:
+console.log( a + b );
+// So block scoping is very much like an IIFE.
+// This WILL work because "var" IS accessible outside the block:
+console.log( c );
