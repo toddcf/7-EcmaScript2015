@@ -79,7 +79,7 @@ for ( let i = 0; i < 5; i++ ) {
 console.log( "Outside for loop: " + i );
 */
 
-
+/*
 // Blocks and IIFEs:
 
 // You can create a block simply by putting code inside curly braces:
@@ -94,3 +94,25 @@ console.log( a + b );
 // So block scoping is very much like an IIFE.
 // This WILL work because "var" IS accessible outside the block:
 console.log( c );
+*/
+
+// Strings
+
+let firstName		= "John";
+let lastName		= "Smith";
+const yearOfBirth	= 1990;
+
+function calcAge( year ) {
+	return 2017 - year;
+};
+
+// ES5:
+
+console.log( "This is " + firstName + " " + lastName + ". I was born in " + yearOfBirth + ", which makes me " + calcAge( yearOfBirth ) + " years old." ); 
+
+
+
+
+
+
+
