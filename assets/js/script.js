@@ -116,8 +116,9 @@ console.log( "This is " + firstName + " " + lastName + ". I was born in " + year
 // You can write all your text PLUS the variables inside the backticks:
 console.log( `This is ${ firstName } ${ lastName }. I was born in ${ yearOfBirth }, which makes me ${ calcAge( yearOfBirth ) } years old.` );
 
+// startsWith:
+const n = `${ firstName } ${ lastName }`;
+console.log( n );
 
-
-
-
+console.log( n.startsWith( "J" ) );
 
