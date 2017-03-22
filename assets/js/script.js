@@ -159,17 +159,24 @@ var ages5 = years.map( function( el ) {
 console.log( ages5 );
 
 // ES6 uses an "arrow function," which is much more concise:
-const ages6 = years.map( el => 2017 - el );
+let ages6 = years.map( el => 2017 - el );
 
 console.log( ages6 );
 
+ages6 = years.map( ( el, index ) => `Age element ${ index + 1 }: ${ 2017 - el }.`);
 
+console.log( ages6 );
 
+// If you want more than one line of code inside, use curly braces to create a block:
+ages6 = years.map( ( el, index ) => {
+	// Current year:
+	const now = new Date().getFullYear();
+	// Calculate age based on current year and the element that was passed in:
+	const age = now - el;
+	return `Age element ${ index + 1 }: ${ age }.`
+});
 
-
-
-
-
+console.log( ages6 );
 
 
 
