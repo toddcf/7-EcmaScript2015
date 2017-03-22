@@ -120,5 +120,29 @@ console.log( `This is ${ firstName } ${ lastName }. I was born in ${ yearOfBirth
 const n = `${ firstName } ${ lastName }`;
 console.log( n );
 
+// This will display TRUE:
 console.log( n.startsWith( "J" ) );
+// This will display FALSE (because it's lowercase):
+console.log( n.startsWith( "j" ) );
+
+// endsWith:
+
+// This will display TRUE:
+console.log( n.endsWith( "th" ) );
+
+// includes:
+// (This is to search the middle of the string.)
+
+// This will display TRUE:
+console.log( n.includes( "Sm" ) );
+
+
+
+
+
+
+
+
+
+
 
