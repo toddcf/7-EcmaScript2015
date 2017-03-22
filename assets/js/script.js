@@ -110,6 +110,11 @@ function calcAge( year ) {
 
 console.log( "This is " + firstName + " " + lastName + ". I was born in " + yearOfBirth + ", which makes me " + calcAge( yearOfBirth ) + " years old." ); 
 
+// ES6:
+
+// Template Literals, which means using backticks instead of quotation marks.
+// You can write all your text PLUS the variables inside the backticks:
+console.log( `This is ${ firstName } ${ lastName }. I was born in ${ yearOfBirth }, which makes me ${ calcAge( yearOfBirth ) } years old.` );
 
 
 
