@@ -190,7 +190,8 @@ console.log( ages6 );
 // Therefore, we say that they have a lexical "this" variable.
 
 // ES5:
-
+/*
+// Can't use "this" keyword without a workaround because it would be pointing to the global object.
 var box5 = {
 	color: "green",
 	position: 1,
@@ -204,6 +205,23 @@ var box5 = {
 };
 
 box5.clickMe();
+*/
+
+// ES6:
+
+// With arrow function, you CAN use the "this" keyword:
+const box6 = {
+	color: "green",
+	position: 1,
+	clickMe: function() {
+		document.querySelector( ".green" ).addEventListener( "click", () => {
+			var str = "This is box number " + this.position + ", and it is " + this.color + ".";
+			alert( str );
+		});
+	}
+};
+
+box6.clickMe();
 
 
 
