@@ -209,7 +209,7 @@ box5.clickMe();
 
 // ES6:
 
-// With arrow function, you CAN use the "this" keyword:
+// With arrow function, you CAN use the "this" keyword because it shares the lexical "this" keyword of its surroundings:
 const box6 = {
 	color: "green",
 	position: 1,
@@ -221,9 +221,23 @@ const box6 = {
 	}
 };
 
-box6.clickMe();
+// box6.clickMe();
 
+// Another variation, using an arrow function in the first function.
+// But "this" will now refer to the global object, so it won't work.
 
+const box66 = {
+	color: "green",
+	position: 1,
+	clickMe: () => {
+		document.querySelector( ".green" ).addEventListener( "click", () => {
+			var str = "This is box number " + this.position + ", and it is " + this.color + ".";
+			alert( str );
+		});
+	}
+};
+
+box66.clickMe();
 
 
 
