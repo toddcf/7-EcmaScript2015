@@ -146,6 +146,7 @@ console.log( firstName.repeat( 5 ) );
 console.log( `${ firstName } `.repeat( 5 ) );
 */
 
+/*
 // Arrow Functions
 
 const years = [ 1990, 1965, 1982, 1937 ];
@@ -158,16 +159,20 @@ var ages5 = years.map( function( el ) {
 
 console.log( ages5 );
 
-// ES6 uses an "arrow function," which is much more concise:
+// ES6 uses an "arrow function," which is much more concise.
+// There are three ways of writing arrow functions.
+// 1. One argument, and one line of code. The simplest.
 let ages6 = years.map( el => 2017 - el );
 
 console.log( ages6 );
 
+// 2. Two arguments, which means using parentheses. Still able to use one line of code:
 ages6 = years.map( ( el, index ) => `Age element ${ index + 1 }: ${ 2017 - el }.`);
 
 console.log( ages6 );
 
-// If you want more than one line of code inside, use curly braces to create a block:
+// 3. Two arguments, and multiple lines of code (most complex).
+// Must use curly braces to create a block, and use the return keyword at the end.
 ages6 = years.map( ( el, index ) => {
 	// Current year:
 	const now = new Date().getFullYear();
@@ -177,9 +182,27 @@ ages6 = years.map( ( el, index ) => {
 });
 
 console.log( ages6 );
+*/
 
+// Arrow Functions: Lexical "This" Keyword:
 
+// Arrow functions do not have a "this" keyword. They use the "this" keyword of the function they are written in.
+// Therefore, we say that they have a lexical "this" variable.
 
+// ES5:
+
+var box5 = {
+	color: "green",
+	position: 1,
+	clickMe: function() {
+		document.querySelector( ".green" ).addEventListener( "click", function() {
+			var str = "This is box number " + this.position + ", and it is " + this.color + ".";
+			alert( str );
+		});
+	}
+};
+
+box5.clickMe();
 
 
 
