@@ -323,7 +323,7 @@ console.log( retirement );
 
 // Arrays (and a new kind of loop)
 
-const boxes = document.querySelectorAll( ".box" );
+// const boxes = document.querySelectorAll( ".box" );
 
 // Remember that querySelectorAll returns a nodelist, which we'll then have to convert into an array:
 
@@ -339,9 +339,9 @@ boxesArr5.forEach( function( cur ) {
 
 // ES6:
 
-const boxesArr6 = Array.from( boxes );
+// const boxesArr6 = Array.from( boxes );
 // A new method called "from," combined with the arrow function:
-Array.from( boxes ).forEach( cur => cur.style.backgroundColor = "dodgerblue");
+// Array.from( boxes ).forEach( cur => cur.style.backgroundColor = "dodgerblue");
 
 
 // Now we will change the text inside the boxes depending on color:
@@ -361,7 +361,7 @@ for ( var i = 0; i < boxesArr5.length; i++ ) {
 // ES6:
 
 // ES6 has a "for-of" loop.
-
+/*
 for ( const cur of boxesArr6 ) {
 	// If the className includes the word "blue":
 	if ( cur.className.includes( "blue" ) ) {
@@ -370,11 +370,21 @@ for ( const cur of boxesArr6 ) {
 
 	cur.textContent = "I changed to blue!";
 };
+*/
 
+// ES5:
 
+var ages = [ 12, 17, 8, 21, 14, 11 ];
 
+// In ES5, we would have to create a boolean array to determine if the age is above or below 18, and then use the indexOf to determine the elements that we want.
+var full = ages.map( function( cur ) {
+	return cur >= 18;
+});
 
+console.log( full );
 
+// Now find the position of any true elements in the array:
+console.log( full.indexOf( true ) );
 
 
 
