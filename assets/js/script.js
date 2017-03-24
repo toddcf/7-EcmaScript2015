@@ -328,15 +328,22 @@ const boxes = document.querySelectorAll( ".box" );
 // Remember that querySelectorAll returns a nodelist, which we'll then have to convert into an array:
 
 // ES5:
-
+/*
 var boxesArr5 = Array.prototype.slice.call( boxes );
 
 boxesArr5.forEach( function( cur ) {
 	// Change all boxes to blue:
 	cur.style.backgroundColor = "dodgerblue";
 });
+*/
 
+// ES6:
 
+// A new method called "from":
+const boxesArr6 = Array.from( boxes );
+
+// And now we can use the arrow function:
+boxesArr6.forEach( cur => cur.style.backgroundColor = "dodgerblue");
 
 
 
