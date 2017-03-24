@@ -309,6 +309,7 @@ const { firstName: a, lastName: b } = obj;
 console.log( a );
 console.log( b );
 */
+/*
 function calcAgeRetirement( year ) {
 	const age = new Date().getFullYear() - year;
 	return [ age, 65 - age ];
@@ -318,11 +319,22 @@ function calcAgeRetirement( year ) {
 const [ age, retirement ] = calcAgeRetirement( 1990 );
 console.log( age );
 console.log( retirement );
+*/
 
+// Arrays (and a new kind of loop)
 
+const boxes = document.querySelectorAll( ".box" );
 
+// Remember that querySelectorAll returns a nodelist, which we'll then have to convert into an array:
 
+// ES5:
 
+var boxesArr5 = Array.prototype.slice.call( boxes );
+
+boxesArr5.forEach( function( cur ) {
+	// Change all boxes to blue:
+	cur.style.backgroundColor = "dodgerblue";
+});
 
 
 
