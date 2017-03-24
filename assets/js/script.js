@@ -295,15 +295,17 @@ const obj = {
 	firstName: "John",
 	lastName: "Smith"
 };
-
+/*
 const { firstName, lastName } = obj;
 
 console.log( firstName );
 console.log( lastName );
+*/
+// If you don't want the variables to be the same as the keys in the object:
+const { firstName: a, lastName: b } = obj;
 
-
-
-
+console.log( a );
+console.log( b );
 
 
 
