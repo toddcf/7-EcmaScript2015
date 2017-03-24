@@ -289,6 +289,20 @@ const [ name, age ] = [ "John", 26 ];
 console.log( name );
 console.log( age );
 
+// Also works with objects:
+
+const obj = {
+	firstName: "John",
+	lastName: "Smith"
+};
+
+const { firstName, lastName } = obj;
+
+console.log( firstName );
+console.log( lastName );
+
+
+
 
 
 
