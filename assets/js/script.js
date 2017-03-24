@@ -423,7 +423,14 @@ const sum3 = addFourAges( ... ages );
 // It will expand the ages array into its components.
 console.log( sum3 );
 
-
+// You can combine both of those arrays using the spread operator on each one:
+const familySmith = [ "John", "Jane", "Mark" ];
+const familyMiller = [ "Mary", "Bob", "Ann" ];
+let bigFamily = [ ... familySmith, ... familyMiller ];
+console.log( bigFamily );
+// You can even add a new element in the middle:
+bigFamily = [ ... familySmith, "Lily", ... familyMiller ];
+console.log( bigFamily );
 
 
 
