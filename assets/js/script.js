@@ -277,11 +277,17 @@ new Person( "Mike" ).myFriends6( friends );
 // Use this to store each element in an array inside a single variable.
 
 // ES5:
-
+/*
 var john = [ "John", 26 ];
 var name = john[0];
 var age = john[1];
+*/
+// ES6:
 
+const [ name, age ] = [ "John", 26 ];
+// What this will do is create a const called "name" and a const called "year", and then store the data in the array in each of those variables.
+console.log( name );
+console.log( age );
 
 
 
