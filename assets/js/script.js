@@ -393,6 +393,9 @@ console.log( ages[ full.indexOf( true ) ] );
 // Return the index of the cur element if that element is greater than 18:
 console.log( ages.findIndex( cur => cur >= 18 ) );
 
+// Now show the age of anyone over 18:
+console.log( ages.find( cur => cur >= 18 ) );
+
 
 
 
