@@ -374,7 +374,7 @@ for ( const cur of boxesArr6 ) {
 
 // ES5:
 
-var ages = [ 12, 17, 8, 21, 14, 11 ];
+// var ages = [ 12, 17, 8, 21, 14, 11 ];
 /*
 // In ES5, we would have to create a boolean array to determine if the age is above or below 18, and then use the indexOf to determine the elements that we want.
 var full = ages.map( function( cur ) {
@@ -391,15 +391,30 @@ console.log( ages[ full.indexOf( true ) ] );
 // ES6:
 // ES6 has the findIndex and find methods to shorten the above process significantly.
 // Return the index of the cur element if that element is greater than 18:
-console.log( ages.findIndex( cur => cur >= 18 ) );
+// console.log( ages.findIndex( cur => cur >= 18 ) );
 
 // Now show the age of anyone over 18:
-console.log( ages.find( cur => cur >= 18 ) );
+// console.log( ages.find( cur => cur >= 18 ) );
 
 
 // Spread Operator
 
 // A convenient way to expand elements of an array, like arguments and function calls.
+
+function addFourAges( a, b, c, d ) {
+	return a + b + c+ d;
+};
+
+var sum1 = addFourAges( 18, 30, 12, 21 );
+console.log( sum1 );
+
+
+
+
+
+
+
+
 
 
 
