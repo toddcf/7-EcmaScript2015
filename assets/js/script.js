@@ -362,7 +362,8 @@ for ( var i = 0; i < boxesArr5.length; i++ ) {
 // ES6 has a "for-of" loop.
 
 for ( const cur of boxesArr6 ) {
-	if ( cur.className === "box blue" ) {
+	// If the className includes the word "blue":
+	if ( cur.className.includes( "blue" ) ) {
 		continue;
 	}
 
