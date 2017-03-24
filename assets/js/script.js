@@ -339,11 +339,8 @@ boxesArr5.forEach( function( cur ) {
 
 // ES6:
 
-// A new method called "from":
-const boxesArr6 = Array.from( boxes );
-
-// And now we can use the arrow function:
-boxesArr6.forEach( cur => cur.style.backgroundColor = "dodgerblue");
+// A new method called "from," combined with the arrow function:
+Array.from( boxes ).forEach( cur => cur.style.backgroundColor = "dodgerblue");
 
 
 
