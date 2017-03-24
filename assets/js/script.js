@@ -328,19 +328,41 @@ const boxes = document.querySelectorAll( ".box" );
 // Remember that querySelectorAll returns a nodelist, which we'll then have to convert into an array:
 
 // ES5:
-/*
+
 var boxesArr5 = Array.prototype.slice.call( boxes );
 
 boxesArr5.forEach( function( cur ) {
 	// Change all boxes to blue:
 	cur.style.backgroundColor = "dodgerblue";
 });
-*/
+
 
 // ES6:
 
 // A new method called "from," combined with the arrow function:
-Array.from( boxes ).forEach( cur => cur.style.backgroundColor = "dodgerblue");
+// Array.from( boxes ).forEach( cur => cur.style.backgroundColor = "dodgerblue");
+
+
+// Now we will change the text inside the boxes depending on color:
+
+// ES5:
+
+// If we reach the blue box, we want to "continue" -- meaning to skip this iteration of the loop and go to the next one:
+for ( var i = 0; i < boxesArr5.length; i++ ) {
+	if ( boxesArr5[i].className === "box blue" ) {
+		continue;
+	}
+
+	boxesArr5[i].textContent = "I changed to blue!";
+};
+
+
+
+
+
+
+
+
 
 
 
