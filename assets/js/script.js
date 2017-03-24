@@ -283,7 +283,7 @@ var name = john[0];
 var age = john[1];
 */
 // ES6:
-
+/*
 const [ name, age ] = [ "John", 26 ];
 // What this will do is create a const called "name" and a const called "year", and then store the data in the array in each of those variables.
 console.log( name );
@@ -295,19 +295,29 @@ const obj = {
 	firstName: "John",
 	lastName: "Smith"
 };
+*/
 /*
 const { firstName, lastName } = obj;
 
 console.log( firstName );
 console.log( lastName );
 */
+/*
 // If you don't want the variables to be the same as the keys in the object:
 const { firstName: a, lastName: b } = obj;
 
 console.log( a );
 console.log( b );
+*/
+function calcAgeRetirement( year ) {
+	const age = new Date().getFullYear() - year;
+	return [ age, 65 - age ];
+};
 
-
+// Now destructure the function:
+const [ age, retirement ] = calcAgeRetirement( 1990 );
+console.log( age );
+console.log( retirement );
 
 
 
