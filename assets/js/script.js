@@ -251,7 +251,7 @@ function Person( name ) {
 Person.prototype.myFriends5 = function( friends ) {
 	var arr = friends.map( function( el ) {
 		return this.name + " is friends with " + el
-	});
+	}.bind( this ));
 
 	console.log( arr );
 }
