@@ -208,7 +208,7 @@ box5.clickMe();
 */
 
 // ES6:
-
+/*
 // With arrow function, you CAN use the "this" keyword because it shares the lexical "this" keyword of its surroundings:
 const box6 = {
 	color: "green",
@@ -238,6 +238,42 @@ const box66 = {
 };
 
 box66.clickMe();
+*/
+
+// With function constructor:
+
+function Person( name ) {
+	this.name = name;
+};
+
+// ES5:
+
+Person.prototype.myFriends5 = function( friends ) {
+	var arr = friends.map( function( el ) {
+		return this.name + " is friends with " + el
+	});
+
+	console.log( arr );
+}
+
+var friends = ["Bob", "Jane", "Mark"];
+new Person( "John" ).myFriends5( friends );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
