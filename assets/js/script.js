@@ -241,11 +241,11 @@ box66.clickMe();
 */
 
 // With function constructor:
-
+/*
 function Person( name ) {
 	this.name = name;
 };
-
+*/
 // ES5:
 /*
 Person.prototype.myFriends5 = function( friends ) {
@@ -260,7 +260,7 @@ var friends = ["Bob", "Jane", "Mark"];
 new Person( "John" ).myFriends5( friends );
 */
 // ES6:
-
+/*
 Person.prototype.myFriends6 = function( friends ) {
 	var arr = friends.map( el => `${this.name} is friends with ${el}` );
 
@@ -268,12 +268,19 @@ Person.prototype.myFriends6 = function( friends ) {
 }
 
 var friends = ["Bob", "Jane", "Mark"];
-new Person( "John" ).myFriends6( friends );
+new Person( "Mike" ).myFriends6( friends );
+*/
 
 
+// Destructuring
 
+// Use this to store each element in an array inside a single variable.
 
+// ES5:
 
+var john = [ "John", 26 ];
+var name = john[0];
+var age = john[1];
 
 
 
