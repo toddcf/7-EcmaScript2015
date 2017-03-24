@@ -397,7 +397,9 @@ console.log( ages.findIndex( cur => cur >= 18 ) );
 console.log( ages.find( cur => cur >= 18 ) );
 
 
+// Spread Operator
 
+// A convenient way to expand elements of an array, like arguments and function calls.
 
 
 
