@@ -262,9 +262,7 @@ new Person( "John" ).myFriends5( friends );
 // ES6:
 
 Person.prototype.myFriends6 = function( friends ) {
-	var arr = friends.map( ( el ) => {
-		return this.name + " is friends with " + el
-	});
+	var arr = friends.map( el => this.name + " is friends with " + el );
 
 	console.log( arr );
 }
