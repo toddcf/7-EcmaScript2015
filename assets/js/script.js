@@ -339,8 +339,9 @@ boxesArr5.forEach( function( cur ) {
 
 // ES6:
 
+const boxesArr6 = Array.from( boxes );
 // A new method called "from," combined with the arrow function:
-const boxesArr6 = Array.from( boxes ).forEach( cur => cur.style.backgroundColor = "dodgerblue");
+Array.from( boxes ).forEach( cur => cur.style.backgroundColor = "dodgerblue");
 
 
 // Now we will change the text inside the boxes depending on color:
