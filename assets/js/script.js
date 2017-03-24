@@ -375,7 +375,7 @@ for ( const cur of boxesArr6 ) {
 // ES5:
 
 var ages = [ 12, 17, 8, 21, 14, 11 ];
-
+/*
 // In ES5, we would have to create a boolean array to determine if the age is above or below 18, and then use the indexOf to determine the elements that we want.
 var full = ages.map( function( cur ) {
 	return cur >= 18;
@@ -385,6 +385,13 @@ console.log( full );
 
 // Now find the position of any true elements in the array:
 console.log( full.indexOf( true ) );
+// Now retrieve that element from the array so you can display their age:
+console.log( ages[ full.indexOf( true ) ] );
+*/
+// ES6:
+// ES6 has the findIndex and find methods to shorten the above process significantly.
+// Return the index of the cur element if that element is greater than 18:
+console.log( ages.findIndex( cur => cur >= 18 ) );
 
 
 
