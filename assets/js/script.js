@@ -621,9 +621,12 @@ if ( question.has( 4 ) ) {
 
 // You can LOOP through a map! One way is the forEach method.
 
-question.forEach( ( value, key ) => console.log( `This is ${key} and it's set to ${value}.` ) );
+// question.forEach( ( value, key ) => console.log( `This is ${key} and it's set to ${value}.` ) );
 
-
+// Using entries will return all entries of our question map:
+for (let [ key, value ] of question.entries() ) {
+	console.log( `This is ${key} and it's set to ${value}.` );
+};
 
 
 
