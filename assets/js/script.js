@@ -607,17 +607,21 @@ console.log( question.get( "question" ) );
 
 // Use "size" instead of "length."
 console.log( question.size );
-
+/*
 // If the question has key #4, delete it:
 if ( question.has( 4 ) ) {
 	// You can delete one of the elements by using its key:
 	question.delete( 4 );	
 }
-
+*/
 // You can also delete EVERYTHING from the map using "clear."
-question.clear();
+// question.clear();
 
+// Set, get, has, delete, and clear are the most basic methods for manipulating maps.
 
+// You can LOOP through a map! One way is the forEach method.
+
+question.forEach( ( value, key ) => console.log( `This is ${key} and it's set to ${value}.` ) );
 
 
 
