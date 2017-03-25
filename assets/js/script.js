@@ -584,7 +584,7 @@ var emily = new SmithPerson( "Emily", 1983, "Diaz", "Spanish" );
 // Maps
 
 // Anything can be a key, not just a string. Could be numbers, booleans, functions, objects.
-
+/*
 const question = new Map();
 // To add data to the new Map, we use the set method. Parameters are key, then value:
 question.set( "question", "What is the official name of the latest major JavaScript version?" );
@@ -604,7 +604,8 @@ question.set( false, "Sorry, that is incorrect. Please try again." );
 // Then all you have to do is pass in the key.
 
 console.log( question.get( "question" ) );
-
+*/
+// It's also very easy to get the size of the map by using the size property.
 // Use "size" instead of "length."
 // console.log( question.size );
 /*
@@ -614,15 +615,17 @@ if ( question.has( 4 ) ) {
 	question.delete( 4 );	
 }
 */
+
+// It's also very easy to add or remove data from the map.
 // You can also delete EVERYTHING from the map using "clear."
 // question.clear();
 
 // Set, get, has, delete, and clear are the most basic methods for manipulating maps.
 
-// You can LOOP through a map! One way is the forEach method.
+// Maps are also iterable. You can LOOP through a map! One way is the forEach method.
 
 // question.forEach( ( value, key ) => console.log( `This is ${key} and it's set to ${value}.` ) );
-
+/*
 // Using entries will return all entries of our question map:
 for (let [ key, value ] of question.entries() ) {
 	// Only execute this part of the code if the key is a number:
@@ -635,6 +638,38 @@ for (let [ key, value ] of question.entries() ) {
 const ans = parseInt( prompt( "Write the correct answer." ) );
 // Compare the user answer with the true answer:
 console.log( question.get( ans === question.get( "correct" ) ) );
+*/
+
+// Classes
+
+// ES5:
+
+var Person5 = function( name, yearOfBirth, job ) {
+	this.name = name;
+	this.yearOfBirth = yearOfBirth;
+	this.job = job;
+};
+
+Person5.prototype.calculateAge = function() {
+	var age = new Date().getFullYear - this.yearOfBirth;
+	console.log( age );
+}
+
+var john5 = new Person5( "John", 1990, "teacher" );
+
+// ES6:
+
+// Class declaration:
+// All classes have to have the constructor method.
+class Person6 {
+
+}
+
+
+
+
+
+
 
 
 
