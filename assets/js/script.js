@@ -551,6 +551,9 @@ function SmithPerson( firstName, yearOfBirth, lastName, nationality ) {
 	this.nationality = nationality;
 };
 
+var john = new SmithPerson( "John", 1990 );
+// If we only specify a couple of the arguments, JavaScript will set the other parameters to "undefined."
+
 
 
 
