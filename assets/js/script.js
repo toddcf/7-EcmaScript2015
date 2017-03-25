@@ -477,6 +477,8 @@ function isFullAge5() {
 
 // Pass some years into the function:
 isFullAge5( 1990, 2001, 1965 );
+// Try it with more arguments:
+isFullAge5( 1990, 2001, 1965, 2016, 1987 );
 
 
 
