@@ -625,7 +625,10 @@ if ( question.has( 4 ) ) {
 
 // Using entries will return all entries of our question map:
 for (let [ key, value ] of question.entries() ) {
-	console.log( `This is ${key} and it's set to ${value}.` );
+	// Only execute this part of the code if the key is a number:
+	if ( typeof( key ) === "number" ) {
+		console.log( `Answer ${key}: ${value}`)
+	}
 };
 
 
