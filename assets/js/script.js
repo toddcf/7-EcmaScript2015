@@ -631,7 +631,10 @@ for (let [ key, value ] of question.entries() ) {
 	}
 };
 
-
+// Since JavaScript will interpret the user response as a string, we must use parseInt to convert it to an integer:
+const ans = parseInt( prompt( "Write the correct answer." ) );
+// Compare the user answer with the true answer:
+console.log( question.get( ans === question.get( "correct" ) ) );
 
 
 
