@@ -606,7 +606,7 @@ question.set( false, "Sorry, that is incorrect. Please try again." );
 console.log( question.get( "question" ) );
 
 // Use "size" instead of "length."
-console.log( question.size );
+// console.log( question.size );
 /*
 // If the question has key #4, delete it:
 if ( question.has( 4 ) ) {
@@ -627,7 +627,7 @@ if ( question.has( 4 ) ) {
 for (let [ key, value ] of question.entries() ) {
 	// Only execute this part of the code if the key is a number:
 	if ( typeof( key ) === "number" ) {
-		console.log( `Answer ${key}: ${value}`)
+		console.log( `Answer ${key}: ${value}` );
 	}
 };
 
