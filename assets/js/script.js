@@ -497,7 +497,7 @@ isFullAge6( 1990, 2001, 1965 );
 // Try it with more arguments:
 isFullAge6( 1990, 2001, 1965, 2016, 1987 );
 */
-
+/*
 // Same thing, but a parameter that accepts not the age limit, but at what age a person becomes an adult. (Maybe it is different in different countries.)
 // But this means the "limit" (aka year of full age) will be part of the arguments, so we need to fix that by "slicing" starting at position 1.
 // This will exclude the first argument.
@@ -535,10 +535,21 @@ function isFullAge6( limit, ... years ) {
 isFullAge6( 21, 1990, 2001, 1965 );
 // Try it with more arguments:
 isFullAge6( 18, 1990, 2001, 1965, 2016, 1987 );
+*/
 
 
+// Default Parameters
 
+// Used whenever we want one or more parameters of a function to be preset -- aka have a default value.
 
+// ES5:
+
+function SmithPerson( firstName, yearOfBirth, lastName, nationality ) {
+	this.firstName = firstName;
+	this.yearOfBirth = yearOfBirth;
+	this.lastName = lastName;
+	this.nationality = nationality;
+};
 
 
 
