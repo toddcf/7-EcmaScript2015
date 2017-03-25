@@ -600,6 +600,24 @@ question.set( true, "Correct!" );
 question.set( false, "Sorry, that is incorrect. Please try again." );
 
 
+// To retrieve data from this map, use the opposite of set, which is get.
+// Then all you have to do is pass in the key.
+
+console.log( question.get( "question" ) );
+
+// Use "size" instead of "length."
+console.log( question.size );
+
+// If the question has key #4, delete it:
+if ( question.has( 4 ) ) {
+	// You can delete one of the elements by using its key:
+	question.delete( 4 );	
+}
+
+// You can also delete EVERYTHING from the map using "clear."
+question.clear();
+
+
 
 
 
