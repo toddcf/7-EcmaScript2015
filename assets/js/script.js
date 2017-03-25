@@ -463,6 +463,7 @@ Array.from( all ).forEach( cur => cur.style.color = "purple" );
 // So "arguments" is an array-like structure, but is not actually an array.
 // If you want to use it as an array (to loop through it, for example), you must first convert it into an array.
 
+/*
 // ES5:
 function isFullAge5() {
 	// console.log( arguments );
@@ -495,7 +496,45 @@ function isFullAge6( ... years ) {
 isFullAge6( 1990, 2001, 1965 );
 // Try it with more arguments:
 isFullAge6( 1990, 2001, 1965, 2016, 1987 );
+*/
 
+// Same thing, but a parameter that accepts not the age limit, but at what age a person becomes an adult. (Maybe it is different in different countries.)
+// But this means the "limit" (aka year of full age) will be part of the arguments, so we need to fix that by "slicing" starting at position 1.
+// This will exclude the first argument.
+// ES5:
+function isFullAge5( limit ) {
+	// console.log( arguments );
+	// Convert to an array and store in new variable:
+	var argsArr = Array.prototype.slice.call( arguments, 1 );
+	// console.log( argsArr );
+	// Now that it's been converted into an array, you can loop through it:
+	argsArr.forEach( function( cur ) {
+		// cur comes from the current array, which comes from the arguments, which are all the numbers that are passed into the function when it's called:
+		console.log( ( 2017 - cur) >= limit );
+	})
+};
+
+// Pass some years into the function, the first being the "limit", or age of adulthood:
+isFullAge5( 21, 1990, 2001, 1965 );
+// Try it with a different limit, and more arguments:
+isFullAge5( 18, 1990, 2001, 1965, 2016, 1987 );
+
+
+// ES6:
+
+// In ES6, instead of having no parameters, we use the rest parameter operator, followed by the variable name.
+// And we now add the "limit" before the rest parameters.
+// So as soon as we call the function, it will convert the arguments into an array and then pass that array into this function:
+function isFullAge6( limit, ... years ) {
+	// console.log( years );
+	years.forEach( cur => console.log ( ( 2017 - cur ) >= limit ) );
+};
+// The result will actually have the array prototype (not the object prototype).
+
+// Pass some years into the function:
+isFullAge6( 21, 1990, 2001, 1965 );
+// Try it with more arguments:
+isFullAge6( 18, 1990, 2001, 1965, 2016, 1987 );
 
 
 
