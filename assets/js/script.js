@@ -563,7 +563,7 @@ var john = new SmithPerson( "John", 1990 );
 // John's sister has married and moved to Spain:
 var emily = new SmithPerson( "Emily", 1983, "Diaz", "Spanish" );
 */
-
+/*
 // ES6:
 
 // In ES6, you define the defaults right in the parameters!
@@ -574,24 +574,30 @@ function SmithPerson( firstName, yearOfBirth, lastName = "Smith", nationality = 
 	this.nationality = nationality;
 };
 
-
-
-
-
-
 var john = new SmithPerson( "John", 1990 );
 // If we only specify a couple of the arguments, JavaScript will set the other parameters to "undefined."
 
 // John's sister has married and moved to Spain:
 var emily = new SmithPerson( "Emily", 1983, "Diaz", "Spanish" );
+*/
 
+// Maps
 
+// Anything can be a key, not just a string. Could be numbers, booleans, functions, objects.
 
-
-
-
-
-
+const question = new Map();
+// To add data to the new Map, we use the set method. Parameters are key, then value:
+question.set( "question", "What is the official name of the latest major JavaScript version?" );
+// Now set multiple choice answers to that question:
+question.set( 1, "ES5" );
+question.set( 2, "ES6" );
+question.set( 3, "ES2015" );
+question.set( 4, "ES7" );
+question.set( "correct", 3 );
+// If question is answered correctly, print to the console:
+question.set( true, "Correct!" );
+// If answered incorrectly:
+question.set( false, "Sorry, that is incorrect. Please try again." );
 
 
 
