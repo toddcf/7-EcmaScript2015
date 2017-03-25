@@ -476,12 +476,25 @@ function isFullAge5() {
 };
 
 // Pass some years into the function:
-isFullAge5( 1990, 2001, 1965 );
+// isFullAge5( 1990, 2001, 1965 );
 // Try it with more arguments:
-isFullAge5( 1990, 2001, 1965, 2016, 1987 );
+// isFullAge5( 1990, 2001, 1965, 2016, 1987 );
 
 
+// ES6:
 
+// In ES6, instead of having no parameters, we use the rest parameter operator, followed by the variable name.
+// So as soon as we call the function, it will convert the arguments into an array and then pass that array into this function:
+function isFullAge6( ... years ) {
+	// console.log( years );
+	years.forEach( cur => console.log ( ( 2017 - cur ) >= 18 ) );
+};
+// The result will actually have the array prototype (not the object prototype).
+
+// Pass some years into the function:
+isFullAge6( 1990, 2001, 1965 );
+// Try it with more arguments:
+isFullAge6( 1990, 2001, 1965, 2016, 1987 );
 
 
 
