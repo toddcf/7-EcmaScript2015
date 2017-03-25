@@ -433,7 +433,19 @@ bigFamily = [ ... familySmith, "Lily", ... familyMiller ];
 console.log( bigFamily );
 
 
+// To use the spread operator on a nodelist:
 
+// Example: Change all boxes to purple using querySelectorAll, which returns a nodelist:
+
+const h = document.querySelector( "h1" );
+const boxes = document.querySelectorAll( ".box" );
+
+// Now use the spread operator instead of individually changing the text color of the h1 element and then looping through all the elements with a class of box:
+const all = [ h, ... boxes ];
+// Now we've stored h1 and all the boxes (expanded) in the "all" variable.
+
+// Convert nodelist to array:
+Array.from( all ).forEach( cur => cur.style.color = "purple" );
 
 
 
