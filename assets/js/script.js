@@ -660,12 +660,22 @@ var john5 = new Person5( "John", 1990, "teacher" );
 // ES6:
 
 // Class declaration:
-// All classes have to have the constructor method.
 class Person6 {
+	// All classes have to have the constructor method, which looks a lot like a function:
+	constructor ( name, yearOfBirth, job ) {
+		this.name = name;
+		this.yearOfBirth = yearOfBirth;
+		this.job = job;
+	}
 
+	// If you want to add a method to it, you do it here inside the class:
+	calculateAge() {
+		var age = new Date().getFullYear - this.yearOfBirth;
+		console.log( age );
+	}
 }
 
-
+const john6 = new Person6( "John", 1990, "teacher" );
 
 
 
