@@ -673,9 +673,19 @@ class Person6 {
 		var age = new Date().getFullYear - this.yearOfBirth;
 		console.log( age );
 	}
+
+	// Static methods are attached to the class, but not inherited by the class instances.
+	// For example, this static greeting cannot be used on john:
+	static greeting() {
+		console.log( "Hey, there!" );
+	}
 }
 
 const john6 = new Person6( "John", 1990, "teacher" );
+
+Person6.greeting();
+
+
 
 
 
