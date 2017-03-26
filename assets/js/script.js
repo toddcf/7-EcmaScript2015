@@ -714,7 +714,8 @@ var Athlete5 = function( name, yearOfBirth, job, olympicGames, medals ) {
 	Person5.call( this, name, yearOfBirth, job );
 	this.olympicGames = olympicGames;
 	this.medals = medals;
-};
+}
+
 
 /*
 Regarding the above, the reason we have to set the "this" variable to "this":
@@ -731,12 +732,41 @@ we need to set the "this" variable to "this".
 // We want the prototype of the Athlete object to become the prototype of the Person object so that they become connected.
 Athlete5.prototype = Object.create( Person5.prototype );
 
+// This method is specific to the athletes, so they will only inherit it if they are athlete instances.
+// Person instances will NOT inherit this method.
+// Note that this can only happen AFTER the two function constructors have been connected.
+Athlete5.prototype.wonMedal = function() {
+	this.medals++;
+	console.log ( this.medals );
+}
+
 // Now test it by creating a new athlete:
 var johnAthlete5 = new Athlete5( "John", 1990, "swimmer", 3, 10 );
 
 johnAthlete5.calculateAge();
+johnAthlete5.wonMedal();
 
+// ES6:
 
+// Superclass
+class Person6 {
+	// All classes have to have the constructor method, which looks a lot like a function:
+	constructor ( name, yearOfBirth, job ) {
+		this.name = name;
+		this.yearOfBirth = yearOfBirth;
+		this.job = job;
+	}
+
+	// If you want to add a method to it, you do it here inside the class:
+	calculateAge() {
+		var age = new Date().getFullYear - this.yearOfBirth;
+		console.log( age );
+	}
+
+}
+
+// Subclass
+class Athlete6 extends
 
 
 
