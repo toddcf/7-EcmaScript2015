@@ -725,6 +725,33 @@ If we want the Person properties name, yearOfBirth, and job to be set on a new A
 "this" keyword also set to our newly-created Athlete object.
 So after this, all the properties will be set in the new Athlete object that's created by the new operator. That's why we need to call it here, and why
 we need to set the "this" variable to "this".
+*/
+
+// To use the correct prototype chain, we'll use object.create.
+// We want the prototype of the Athlete object to become the prototype of the Person object so that they become connected.
+Athlete5.prototype = Object.create( Person5.prototype );
+
+// Now test it by creating a new athlete:
+var johnAthlete5 = new Athlete5( "John", 1990, "swimmer", 3, 10 );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
