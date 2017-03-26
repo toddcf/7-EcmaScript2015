@@ -643,7 +643,7 @@ console.log( question.get( ans === question.get( "correct" ) ) );
 // Classes
 
 // ES5:
-
+/*
 var Person5 = function( name, yearOfBirth, job ) {
 	this.name = name;
 	this.yearOfBirth = yearOfBirth;
@@ -685,10 +685,46 @@ const john6 = new Person6( "John", 1990, "teacher" );
 
 Person6.greeting();
 
+// Class definitions are NOT hoisted.
+// Unlike function constructors, we need to first implement a class, and only later in our code can we start using it.
+// We can only add methods to classes, but not properties. Which is fine, because inheriting properties through the object instances is not the best practice.
+*/
 
+// Subclasses
 
+// ES5:
 
+var Person5 = function( name, yearOfBirth, job ) {
+	this.name = name;
+	this.yearOfBirth = yearOfBirth;
+	this.job = job;
+};
 
+Person5.prototype.calculateAge = function() {
+	var age = new Date().getFullYear - this.yearOfBirth;
+	console.log( age );
+}
+
+var john5 = new Person5( "John", 1990, "teacher" );
+
+// This will inherit from Person5.
+// First parameters are the same; then you add on the other stuff that is unique to this:
+var Athlete5 = function( name, yearOfBirth, job, olympicGames, medals ) {
+	// So first we call our super class, which is Person5, that we'll be inheriting from:
+	Person5.call( this, name, yearOfBirth, job );
+	this.olympicGames = olympicGames;
+	this.medals = medals;
+};
+
+/*
+Regarding the above, the reason we have to set the "this" variable to "this":
+When creating a new Athlete object, "new" creates a new empty object, calls the Athlete function constructor, and sets the "this" keyword
+to the newly created empty objects.
+In the execution context that we're in here, the "this" keyword will point to the new empty object.
+If we want the Person properties name, yearOfBirth, and job to be set on a new Athlete object, we need to call the Person function constructor with the
+"this" keyword also set to our newly-created Athlete object.
+So after this, all the properties will be set in the new Athlete object that's created by the new operator. That's why we need to call it here, and why
+we need to set the "this" variable to "this".
 
 
 
