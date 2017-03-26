@@ -759,16 +759,32 @@ class Person6 {
 
 	// If you want to add a method to it, you do it here inside the class:
 	calculateAge() {
-		var age = new Date().getFullYear - this.yearOfBirth;
+		var age = new Date().getFullYear() - this.yearOfBirth;
 		console.log( age );
 	}
 
 }
 
 // Subclass
-class Athlete6 extends
+// Always start out by saying the sublcass "extends" the superclass:
+class Athlete6 extends Person6 {
+	constructor( name, yearOfBirth, job, olympicGames, medals ) {
+		// Saying "super" will call the super class. List only the paramaters of the super class.
+		super( name, yearOfBirth, job );
+		this.olympicGames = olympicGames;
+		this.medals = medals;
+	}
 
+	wonMedal() {
+		this.medals++;
+		console.log( this.medals );
+	}
+}
 
+const johnAthlete6 = new Athlete6( "John", 1990, "swimmer", 3, 10 );
+
+johnAthlete6.calculateAge();
+johnAthlete6.wonMedal();
 
 
 
