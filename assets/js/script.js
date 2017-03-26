@@ -701,7 +701,7 @@ var Person5 = function( name, yearOfBirth, job ) {
 };
 
 Person5.prototype.calculateAge = function() {
-	var age = new Date().getFullYear - this.yearOfBirth;
+	var age = new Date().getFullYear() - this.yearOfBirth;
 	console.log( age );
 }
 
@@ -734,7 +734,7 @@ Athlete5.prototype = Object.create( Person5.prototype );
 // Now test it by creating a new athlete:
 var johnAthlete5 = new Athlete5( "John", 1990, "swimmer", 3, 10 );
 
-
+johnAthlete5.calculateAge();
 
 
 
