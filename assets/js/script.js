@@ -693,7 +693,7 @@ Person6.greeting();
 // Subclasses
 
 // ES5:
-
+/*
 var Person5 = function( name, yearOfBirth, job ) {
 	this.name = name;
 	this.yearOfBirth = yearOfBirth;
@@ -715,7 +715,7 @@ var Athlete5 = function( name, yearOfBirth, job, olympicGames, medals ) {
 	this.olympicGames = olympicGames;
 	this.medals = medals;
 }
-
+*/
 
 /*
 Regarding the above, the reason we have to set the "this" variable to "this":
@@ -730,11 +730,13 @@ we need to set the "this" variable to "this".
 
 // To use the correct prototype chain, we'll use object.create.
 // We want the prototype of the Athlete object to become the prototype of the Person object so that they become connected.
+/*
 Athlete5.prototype = Object.create( Person5.prototype );
-
+*/
 // This method is specific to the athletes, so they will only inherit it if they are athlete instances.
 // Person instances will NOT inherit this method.
 // Note that this can only happen AFTER the two function constructors have been connected.
+/*
 Athlete5.prototype.wonMedal = function() {
 	this.medals++;
 	console.log ( this.medals );
@@ -745,9 +747,10 @@ var johnAthlete5 = new Athlete5( "John", 1990, "swimmer", 3, 10 );
 
 johnAthlete5.calculateAge();
 johnAthlete5.wonMedal();
+*/
 
 // ES6:
-
+/*
 // Superclass
 class Person6 {
 	// All classes have to have the constructor method, which looks a lot like a function:
@@ -785,14 +788,52 @@ const johnAthlete6 = new Athlete6( "John", 1990, "swimmer", 3, 10 );
 
 johnAthlete6.calculateAge();
 johnAthlete6.wonMedal();
+*/
+
+// Final Challenge:
+
+/*
+You work in a small town administration, and are in charge of two elements:
+
+1. Parks.
+2. Streets.
+
+It's a very small town, so there are only 3 parks and 4 streets. All parks and streets have a name and a build year.
+Your boss wants a report on the following:
+
+1. Tree density of each park. (Number of trees/park area.)
+2. Average age of each town's park. (Sum of all ages/number of parks.)
+3. The name of the park that has more than 1,000 trees.
+4. Total and average length of the town's streets.
+5. Size classification of all streets: tiny, small, normal, big, huge. If the size is unkown, the default is normal.
+
+Print all results to the console.
+
+HINT: Use ES6 classes, subclasses, template strings, default parameters, maps, arrow functions, destructuring, etc.
+
+Examples:
+
+Parks Report:
+Our 3 parks have an average of X years.
+Green Park has a tree density of 1,075 trees per sq km.
+National Park has a tree density of 1,221 trees per sq km.
+Oak Park has a tree density of 2,372.5 trees per sq km.
+National Park has more than 1,000 trees.
+
+Streets Report:
+Our 4 streets have a total length of 7.1 km, with an average of 1.775 km.
+Ocean Avenue, built in 1999, is a big street.
+Evergreen Street, built in 2008, is a small street.
+4th Street, built in 2015, is a normal street.
+Sunset Blvd, built in 1982, is a huge street.
+*/
+
+const 
 
 
-
-
-
-
-
-
+console.log( `Our ${  } parks have an average of ${  } years.` );
+console.log( `${  } has a tree density of ${  } trees per square km.` );
+console.log(  );
 
 
 
