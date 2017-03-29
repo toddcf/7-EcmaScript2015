@@ -828,13 +828,85 @@ Evergreen Street, built in 2008, is a small street.
 Sunset Blvd, built in 1982, is a huge street.
 */
 
-const 
+const parks = [
+	{
+		name: "Green Park",
+		trees: 80,
+		area: 2,
+		treeDensity: function() => {
+
+			let density = this.trees / this.area;
+			console.log( `${ this.name } has a tree density of ${ density } trees per square km.` );
+
+		};
+	},
+	{
+		name: "Chill Park",
+		trees: 120,
+		area: 5,
+		treeDensity: function() => {
+
+			let density = this.trees / this.area;
+			console.log( `${ this.name } has a tree density of ${ density } trees per square km.` );
+
+		};
+	},
+	{
+		name: "Tranquility Park",
+		trees: 400,
+		area: 12,
+		treeDensity: function() => {
+
+			let density = this.trees / this.area;
+			console.log( `${ this.name } has a tree density of ${ density } trees per square km.` );
+
+		};
+	},
+];
 
 
+const streets = [
+	{
+		name: "Huntington Blvd",
+		length: 14,
+		size: 
+	},
+	{
+		name: "Evergreen St",
+		length: 7,
+		size: 
+	},
+	{
+		name: "Alpine Rd",
+		length: 10,
+		size: 
+	},
+	{
+		name: "Constellation Circle",
+		length: 12,
+		size: 
+	},
+];
+
+
+
+
+
+
+
+console.log( `Parks Report:`);
 console.log( `Our ${  } parks have an average of ${  } years.` );
 console.log( `${  } has a tree density of ${  } trees per square km.` );
-console.log(  );
+console.log( `${  } has a tree density of ${  } trees per square km.` );
+console.log( `${  } has a tree density of ${  } trees per square km.` );
+console.log( `${  } has more than 1,000 trees.`);
 
+console.log( `Streets Report:` );
+console.log( `Our ${  } streets have a total length of ${  } km, with an average of ${  } km.`);
+console.log( `${  }, built in ${  }, is a ${  } street.` );
+console.log( `${  }, built in ${  }, is a ${  } street.` );
+console.log( `${  }, built in ${  }, is a ${  } street.` );
+console.log( `${  }, built in ${  }, is a ${  } street.` );
 
 
 
