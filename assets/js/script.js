@@ -883,13 +883,18 @@ const now = new Date().getFullYear();
 const parksReport = function( parkArr ) {
 	const numParks = parkArr.length;
 	console.log( `Parks Report:`);
-	// for ( let i = 0; i < parkArr.length; i++ ) {
+	
+	// Average age of parks:
+	for ( let i = 0; i < parkArr.length; i++ ) {
 		// Map park ages to new array.
 		// Then get the sum of that array.
-		
-	// }
-	// console.log( `Our ${ numParks } parks have an average age of ${ ( now - this.foundingDate ) / numParks } years.` );
+		let parkAges = parkArr.map( parkArr[i].foundingDate => now - parkArr[i].foundingDate );
+	}
 	
+	console.log( parkAges );
+	// console.log( `Our ${ numParks } parks have an average age of ${ ( now - parkArr[i].foundingDate ) / numParks } years.` );
+	
+	// Tree density:
 	for ( let i = 0; i < parkArr.length; i++ ) {		
 		console.log( `${ parkArr[i].name } has a tree density of ${ ( parkArr[i].trees / parkArr[i].area ) } trees per square km.` );
 		if ( parkArr[i].trees > 1000 ) {
@@ -899,7 +904,7 @@ const parksReport = function( parkArr ) {
 		
 };
 /*
-const streetSize = function() {
+const streetSize = function( streetArr ) {
 	console.log( `Streets Report:` );
 	let streetLengths = streets.map( el => this.length );
 	console.log( `Our ${ streets.length } streets have a total length of ${  } km, with an average of ${  } km.`);
@@ -931,7 +936,7 @@ console.log( ages6 );
 
 
 parksReport( parks );
-// streetSize();
+// streetSize( streets );
 
 
 
