@@ -833,34 +833,19 @@ const parks = [
 		name: "Green Park",
 		trees: 80,
 		area: 2,
-		treeDensity: function() => {
-
-			let density = this.trees / this.area;
-			console.log( `${ this.name } has a tree density of ${ density } trees per square km.` );
-
-		};
+		foundingDate: 1963
 	},
 	{
 		name: "Chill Park",
 		trees: 120,
 		area: 5,
-		treeDensity: function() => {
-
-			let density = this.trees / this.area;
-			console.log( `${ this.name } has a tree density of ${ density } trees per square km.` );
-
-		};
+		foundingDate: 1979
 	},
 	{
 		name: "Tranquility Park",
 		trees: 400,
 		area: 12,
-		treeDensity: function() => {
-
-			let density = this.trees / this.area;
-			console.log( `${ this.name } has a tree density of ${ density } trees per square km.` );
-
-		};
+		foundingDate: 1983
 	},
 ];
 
@@ -869,44 +854,84 @@ const streets = [
 	{
 		name: "Huntington Blvd",
 		length: 14,
-		size: 
+		size: ,
+		dateBuilt: 1949
 	},
 	{
 		name: "Evergreen St",
 		length: 7,
-		size: 
+		size: ,
+		dateBuilt: 1951
 	},
 	{
 		name: "Alpine Rd",
 		length: 10,
-		size: 
+		size: ,
+		dateBuilt: 1999
 	},
 	{
 		name: "Constellation Circle",
 		length: 12,
-		size: 
+		size: ,
+		dateBuilt: 2001
 	},
 ];
 
 
+const parksReport = function() {
+	console.log( `Parks Report:`);
+	console.log( `Our ${ parks.length + 1 } parks have an average of ${  } years.` );
+	for ( let i = 0; i < parks.length; i++ ) {
+		// Map park ages to new array.
+		console.log( `${ this.name } has a tree density of ${ this.trees / this.area } trees per square km.` );
+		if ( this.trees > 1000 ) {
+			console.log( `${ this.name } has more than 1,000 trees.`);
+		}
+	}	
+};
+
+const streetSize = function() {
+	console.log( `Streets Report:` );
+	let streetLengths = streets.map( el => 2017 - el );
+	console.log( `Our ${ streets.length } streets have a total length of ${  } km, with an average of ${  } km.`);
+	for ( let i = 0; i < streets.length; i++ ) {
+		console.log( `${ this.name }, built in ${ this.dateBuilt }, is a ${  } street.` );
+	}
+};
+
+const years = [ 1990, 1965, 1982, 1937 ];
+
+// ES5:
+// Use map to create a new array of ages and store it in ages5:
+var ages5 = years.map( function( el ) {
+	return 2017 - el;
+});
+
+console.log( ages5 );
+
+// ES6 uses an "arrow function," which is much more concise.
+// There are three ways of writing arrow functions.
+// 1. One argument, and one line of code. The simplest.
+let ages6 = years.map( el => 2017 - el );
+
+console.log( ages6 );
 
 
 
 
 
-console.log( `Parks Report:`);
-console.log( `Our ${  } parks have an average of ${  } years.` );
-console.log( `${  } has a tree density of ${  } trees per square km.` );
-console.log( `${  } has a tree density of ${  } trees per square km.` );
-console.log( `${  } has a tree density of ${  } trees per square km.` );
-console.log( `${  } has more than 1,000 trees.`);
 
-console.log( `Streets Report:` );
-console.log( `Our ${  } streets have a total length of ${  } km, with an average of ${  } km.`);
-console.log( `${  }, built in ${  }, is a ${  } street.` );
-console.log( `${  }, built in ${  }, is a ${  } street.` );
-console.log( `${  }, built in ${  }, is a ${  } street.` );
-console.log( `${  }, built in ${  }, is a ${  } street.` );
+parksReport();
+streetSize();
+
+
+
+
+
+
+
+
+
 
 
 
