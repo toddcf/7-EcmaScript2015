@@ -891,7 +891,7 @@ const parksReport = function( parkArr ) {
 	// console.log( `Our ${ numParks } parks have an average age of ${ ( now - this.foundingDate ) / numParks } years.` );
 	
 	for ( let i = 0; i < parkArr.length; i++ ) {		
-		console.log( `${ parkArr[i].name } has a tree density of ${ ( parseInt( this.trees / this.area ) ) } trees per square km.` );
+		console.log( `${ parkArr[i].name } has a tree density of ${ ( parkArr[i].trees / parkArr[i].area ) } trees per square km.` );
 		if ( this.trees > 1000 ) {
 			console.log( `${ this.name } has more than 1,000 trees.`);
 		}
