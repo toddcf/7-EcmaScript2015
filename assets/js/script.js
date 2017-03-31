@@ -853,46 +853,58 @@ const parks = [
 const streets = [
 	{
 		name: "Huntington Blvd",
-		length: 14,
-		size: ,
+		streetLength: 14,
+		// size: ,
 		dateBuilt: 1949
 	},
 	{
 		name: "Evergreen St",
-		length: 7,
-		size: ,
+		streetLength: 7,
+		// size: ,
 		dateBuilt: 1951
 	},
 	{
 		name: "Alpine Rd",
-		length: 10,
-		size: ,
+		streetLength: 10,
+		// size: ,
 		dateBuilt: 1999
 	},
 	{
 		name: "Constellation Circle",
-		length: 12,
-		size: ,
+		streetLength: 12,
+		// size: ,
 		dateBuilt: 2001
 	},
 ];
 
 
+const now = new Date().getFullYear();
+console.log( now );
+
 const parksReport = function() {
+	const numParks = parks.length;
+	console.log( numParks );
 	console.log( `Parks Report:`);
-	console.log( `Our ${ parks.length + 1 } parks have an average of ${  } years.` );
-	for ( let i = 0; i < parks.length; i++ ) {
+	// for ( let i = 0; i < parks.length; i++ ) {
 		// Map park ages to new array.
+		// Then get the sum of that array.
+		
+	// }
+	// console.log( `Our ${ numParks } parks have an average age of ${ ( now - this.foundingDate ) / numParks } years.` );
+	/*
+	for ( let i = 0; i < parks.length; i++ ) {
+		
 		console.log( `${ this.name } has a tree density of ${ this.trees / this.area } trees per square km.` );
 		if ( this.trees > 1000 ) {
 			console.log( `${ this.name } has more than 1,000 trees.`);
 		}
-	}	
+	}
+	*/	
 };
-
+/*
 const streetSize = function() {
 	console.log( `Streets Report:` );
-	let streetLengths = streets.map( el => 2017 - el );
+	let streetLengths = streets.map( el => this.length );
 	console.log( `Our ${ streets.length } streets have a total length of ${  } km, with an average of ${  } km.`);
 	for ( let i = 0; i < streets.length; i++ ) {
 		console.log( `${ this.name }, built in ${ this.dateBuilt }, is a ${  } street.` );
@@ -915,14 +927,14 @@ console.log( ages5 );
 let ages6 = years.map( el => 2017 - el );
 
 console.log( ages6 );
-
+*/
 
 
 
 
 
 parksReport();
-streetSize();
+// streetSize();
 
 
 
