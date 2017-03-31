@@ -843,8 +843,8 @@ const parks = [
 	},
 	{
 		name: "Tranquility Park",
-		trees: 400,
-		area: 12,
+		trees: 1239,
+		area: 19,
 		foundingDate: 1983
 	},
 ];
@@ -879,27 +879,24 @@ const streets = [
 
 
 const now = new Date().getFullYear();
-console.log( now );
 
-const parksReport = function() {
-	const numParks = parks.length;
-	console.log( numParks );
+const parksReport = function( parkArr ) {
+	const numParks = parkArr.length;
 	console.log( `Parks Report:`);
-	// for ( let i = 0; i < parks.length; i++ ) {
+	// for ( let i = 0; i < parkArr.length; i++ ) {
 		// Map park ages to new array.
 		// Then get the sum of that array.
 		
 	// }
 	// console.log( `Our ${ numParks } parks have an average age of ${ ( now - this.foundingDate ) / numParks } years.` );
-	/*
-	for ( let i = 0; i < parks.length; i++ ) {
-		
-		console.log( `${ this.name } has a tree density of ${ this.trees / this.area } trees per square km.` );
+	
+	for ( let i = 0; i < parkArr.length; i++ ) {		
+		console.log( `${ parkArr[i].name } has a tree density of ${ ( parseInt( this.trees / this.area ) ) } trees per square km.` );
 		if ( this.trees > 1000 ) {
 			console.log( `${ this.name } has more than 1,000 trees.`);
 		}
 	}
-	*/	
+		
 };
 /*
 const streetSize = function() {
@@ -933,7 +930,7 @@ console.log( ages6 );
 
 
 
-parksReport();
+parksReport( parks );
 // streetSize();
 
 
