@@ -849,12 +849,45 @@ const parks = [
 	},
 ];
 
+const calcSize = function( km ) {
+	let size;
+	if ( km > 20) {
+		size = huge;
+	}
+	else if ( km > 15) {
+		size = big;
+	}
+	else if ( km > 10) {
+		size = normal;
+	}
+	else if ( km > 5) {
+		size = small;
+	}
+	else if ( km > 0) {
+		size = tiny;
+	}
+	console.log( ` ${ name } is a ${ size } street.`)
+};
+tiny, small, normal, big, huge. If the size is unkown, the default is normal.
+
+
+// With arrow function, you CAN use the "this" keyword because it shares the lexical "this" keyword of its surroundings:
+const box6 = {
+	color: "green",
+	position: 1,
+	clickMe: function() {
+		document.querySelector( ".green" ).addEventListener( "click", () => {
+			var str = "This is box number " + this.position + ", and it is " + this.color + ".";
+			alert( str );
+		});
+	}
+};
 
 const streets = [
 	{
 		name: "Huntington Blvd",
 		streetLength: 14,
-		// size: ,
+		size: calcSize( this.streetLength ),
 		dateBuilt: 1949
 	},
 	{
@@ -885,6 +918,7 @@ const parksReport = function( parkArr ) {
 	console.log( `Parks Report:`);
 	
 	// Average age of parks:
+	/*
 	for ( let i = 0; i < parkArr.length; i++ ) {
 		// Map park ages to new array.
 		// Then get the sum of that array.
@@ -893,7 +927,7 @@ const parksReport = function( parkArr ) {
 	
 	console.log( parkAges );
 	// console.log( `Our ${ numParks } parks have an average age of ${ ( now - parkArr[i].foundingDate ) / numParks } years.` );
-	
+	*/
 	// Tree density:
 	for ( let i = 0; i < parkArr.length; i++ ) {		
 		console.log( `${ parkArr[i].name } has a tree density of ${ ( parkArr[i].trees / parkArr[i].area ) } trees per square km.` );
@@ -903,33 +937,18 @@ const parksReport = function( parkArr ) {
 	}
 		
 };
-/*
+
 const streetSize = function( streetArr ) {
 	console.log( `Streets Report:` );
 	let streetLengths = streets.map( el => this.length );
 	console.log( `Our ${ streets.length } streets have a total length of ${  } km, with an average of ${  } km.`);
 	for ( let i = 0; i < streets.length; i++ ) {
-		console.log( `${ this.name }, built in ${ this.dateBuilt }, is a ${  } street.` );
+		console.log( `${ streetArr[i].name }, built in ${ streetArr[i].dateBuilt }, is a ${  } street.` );
 	}
 };
 
-const years = [ 1990, 1965, 1982, 1937 ];
 
-// ES5:
-// Use map to create a new array of ages and store it in ages5:
-var ages5 = years.map( function( el ) {
-	return 2017 - el;
-});
 
-console.log( ages5 );
-
-// ES6 uses an "arrow function," which is much more concise.
-// There are three ways of writing arrow functions.
-// 1. One argument, and one line of code. The simplest.
-let ages6 = years.map( el => 2017 - el );
-
-console.log( ages6 );
-*/
 
 
 
