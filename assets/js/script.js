@@ -851,24 +851,30 @@ const parks = [
 
 const calcSize = function( km ) {
 	let size;
-	if ( km > 20) {
-		size = huge;
+
+	switch ( km ) {
+		case ( km > 20 ):
+			size = huge;
+			break;
+		case ( km > 15 ):
+			size = big;
+			break;
+		case ( km > 10 ):
+			size = normal;
+			break;
+		case ( km > 5 ):
+			size = small;
+			break;
+		case ( km > 0 ):
+			size = tiny;
+			break;
+		default:
+			size = normal;
+			break;
 	}
-	else if ( km > 15) {
-		size = big;
-	}
-	else if ( km > 10) {
-		size = normal;
-	}
-	else if ( km > 5) {
-		size = small;
-	}
-	else if ( km > 0) {
-		size = tiny;
-	}
+
 	console.log( ` ${ name } is a ${ size } street.`)
 };
-tiny, small, normal, big, huge. If the size is unkown, the default is normal.
 
 
 // With arrow function, you CAN use the "this" keyword because it shares the lexical "this" keyword of its surroundings:
