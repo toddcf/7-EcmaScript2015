@@ -833,93 +833,62 @@ Sunset Blvd, built in 1982, is a huge street.
 
 // Superclass:
 class Element {
+	// All classes have to have the constructor method, which looks a lot like a function:
 	constructor ( name, buildYear ) {
 		this.name = name;
 		this.buildYear = buildYear;
 	}
+
+	// If you want to add a method to it, you do it here inside the class:
+	// calculateAge() {
+		// var age = new Date().getFullYear() - this.yearOfBirth;
+		// console.log( age );
+	// }
 }
 
 // Subclasses:
 
+// Always start out by saying the sublcass "extends" the superclass:
 class Parks extends Element {
 	constructor ( name, buildYear, trees, area ) {
+		// Saying "super" will call the super class. List only the paramaters of the super class.
 		super ( name, buildYear );
 		this.trees = trees;
 		this.area = area;
 	}
 }
 
+// Always start out by saying the sublcass "extends" the superclass:
 class Streets extends Element {
-	constructor ( name, buildYear, streetLength, size ) {
+	constructor ( name, buildYear, streetLength ) {
+		// Saying "super" will call the super class. List only the paramaters of the super class.
 		super ( name, buildYear );
 		this.streetLength = streetLength;
-		this.size = size;
+		// this.size = 
 	}
+
+	// wonMedal() {
+		// this.medals++;
+		// console.log( this.medals );
+	// }
 }
 
-const greenPark = new Parks( "Green Park", 1963, )
+// Create the parks:
+const greenPark = new Parks( "Green Park", 1963, 80, 2 );
+const chillPark = new Parks( "Chill Park", 1979, 120, 5 );
+const tranquilityPark = new Parks( "Tranquility Park", 1983, 1239, 19 );
 
-const johnAthlete6 = new Athlete6( "John", 1990, "swimmer", 3, 10 );
+// Create the streets:
+const huntingtonBlvd = new Streets( "Huntington Blvd", 1949, 14 );
+const evergreenStreet = new Streets( "Evergreen Street", 1951, 7 );
+const alpineRd = new Streets( "Alpine Road", 1999, 10 );
+const constellationCircle = new Streets( "Constellation Circle", 2001, 12 );
 
-// Superclass
-class Person6 {
-	// All classes have to have the constructor method, which looks a lot like a function:
-	constructor ( name, yearOfBirth, job ) {
-		this.name = name;
-		this.yearOfBirth = yearOfBirth;
-		this.job = job;
-	}
-
-	// If you want to add a method to it, you do it here inside the class:
-	calculateAge() {
-		var age = new Date().getFullYear() - this.yearOfBirth;
-		console.log( age );
-	}
-
-}
-
-// Subclass
-// Always start out by saying the sublcass "extends" the superclass:
-class Athlete6 extends Person6 {
-	constructor( name, yearOfBirth, job, olympicGames, medals ) {
-		// Saying "super" will call the super class. List only the paramaters of the super class.
-		super( name, yearOfBirth, job );
-		this.olympicGames = olympicGames;
-		this.medals = medals;
-	}
-
-	wonMedal() {
-		this.medals++;
-		console.log( this.medals );
-	}
-}
-
-const johnAthlete6 = new Athlete6( "John", 1990, "swimmer", 3, 10 );
 
 johnAthlete6.calculateAge();
 johnAthlete6.wonMedal();
 
 
-const parks = [
-	{
-		name: "Green Park",
-		trees: 80,
-		area: 2,
-		foundingDate: 1963
-	},
-	{
-		name: "Chill Park",
-		trees: 120,
-		area: 5,
-		foundingDate: 1979
-	},
-	{
-		name: "Tranquility Park",
-		trees: 1239,
-		area: 19,
-		foundingDate: 1983
-	},
-];
 
 const calcSize = function( km ) {
 	let streetSize = "normal";
@@ -961,32 +930,7 @@ const box6 = {
 	}
 };
 
-const streets = [
-	{
-		name: "Huntington Blvd",
-		streetLength: 14,
-		size: calcSize( this.streetLength ),
-		dateBuilt: 1949
-	},
-	{
-		name: "Evergreen St",
-		streetLength: 7,
-		// size: ,
-		dateBuilt: 1951
-	},
-	{
-		name: "Alpine Rd",
-		streetLength: 10,
-		// size: ,
-		dateBuilt: 1999
-	},
-	{
-		name: "Constellation Circle",
-		streetLength: 12,
-		// size: ,
-		dateBuilt: 2001
-	},
-];
+
 
 
 const now = new Date().getFullYear();
