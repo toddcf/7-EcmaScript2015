@@ -849,17 +849,29 @@ class Element {
 // Subclasses:
 
 // Always start out by saying the sublcass "extends" the superclass:
-class Parks extends Element {
-	constructor ( name, buildYear, trees, area ) {
+class Park extends Element {
+	constructor ( name, buildYear, area, trees ) {
 		// Saying "super" will call the super class. List only the paramaters of the super class.
 		super ( name, buildYear );
-		this.trees = trees;
 		this.area = area;
+		this.trees = trees;
+	}
+
+	// Method for calculating the tree density:
+	treeDensity() {
+		const density = this.trees / this.area;
+		console.log( `${ this.name } has a tree density of ${ density } trees per square km.` );
+		/*
+		if ( this.trees > 1000 ) {
+			console.log( `${ this.name } has more than 1,000 trees.` );
+		}
+		*/
+	}
 	}
 }
 
 // Always start out by saying the sublcass "extends" the superclass:
-class Streets extends Element {
+class Street extends Element {
 	constructor ( name, buildYear, streetLength ) {
 		// Saying "super" will call the super class. List only the paramaters of the super class.
 		super ( name, buildYear );
@@ -873,16 +885,16 @@ class Streets extends Element {
 	// }
 }
 
-// Create the parks:
-const greenPark = new Parks( "Green Park", 1963, 80, 2 );
-const chillPark = new Parks( "Chill Park", 1979, 120, 5 );
-const tranquilityPark = new Parks( "Tranquility Park", 1983, 1239, 19 );
+// Construct the parks:
+const greenPark = new Park( "Green Park", 1963, 2, 80 );
+const chillPark = new Park( "Chill Park", 1979, 5, 120 );
+const tranquilityPark = new Park( "Tranquility Park", 1983, 19, 1239 );
 
-// Create the streets:
-const huntingtonBlvd = new Streets( "Huntington Blvd", 1949, 14 );
-const evergreenStreet = new Streets( "Evergreen Street", 1951, 7 );
-const alpineRd = new Streets( "Alpine Road", 1999, 10 );
-const constellationCircle = new Streets( "Constellation Circle", 2001, 12 );
+// Construct the streets:
+const huntingtonBlvd = new Street( "Huntington Blvd", 1949, 14 );
+const evergreenStreet = new Street( "Evergreen Street", 1951, 7 );
+const alpineRd = new Street( "Alpine Road", 1999, 10 );
+const constellationCircle = new Street( "Constellation Circle", 2001, 12 );
 
 
 johnAthlete6.calculateAge();
