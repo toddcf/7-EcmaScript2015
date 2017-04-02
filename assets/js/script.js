@@ -828,6 +828,78 @@ Evergreen Street, built in 2008, is a small street.
 Sunset Blvd, built in 1982, is a huge street.
 */
 
+// Create a superclass that contains the name and the buildYear, since both parks and streets have these elements.
+// Then create subclasses for parks and streets to handle their unique elements.
+
+// Superclass:
+class Element {
+	constructor ( name, buildYear ) {
+		this.name = name;
+		this.buildYear = buildYear;
+	}
+}
+
+// Subclasses:
+
+class Parks extends Element {
+	constructor ( name, buildYear, trees, area ) {
+		super ( name, buildYear );
+		this.trees = trees;
+		this.area = area;
+	}
+}
+
+class Streets extends Element {
+	constructor ( name, buildYear, streetLength, size ) {
+		super ( name, buildYear );
+		this.streetLength = streetLength;
+		this.size = size;
+	}
+}
+
+const greenPark = new Parks( "Green Park", 1963, )
+
+const johnAthlete6 = new Athlete6( "John", 1990, "swimmer", 3, 10 );
+
+// Superclass
+class Person6 {
+	// All classes have to have the constructor method, which looks a lot like a function:
+	constructor ( name, yearOfBirth, job ) {
+		this.name = name;
+		this.yearOfBirth = yearOfBirth;
+		this.job = job;
+	}
+
+	// If you want to add a method to it, you do it here inside the class:
+	calculateAge() {
+		var age = new Date().getFullYear() - this.yearOfBirth;
+		console.log( age );
+	}
+
+}
+
+// Subclass
+// Always start out by saying the sublcass "extends" the superclass:
+class Athlete6 extends Person6 {
+	constructor( name, yearOfBirth, job, olympicGames, medals ) {
+		// Saying "super" will call the super class. List only the paramaters of the super class.
+		super( name, yearOfBirth, job );
+		this.olympicGames = olympicGames;
+		this.medals = medals;
+	}
+
+	wonMedal() {
+		this.medals++;
+		console.log( this.medals );
+	}
+}
+
+const johnAthlete6 = new Athlete6( "John", 1990, "swimmer", 3, 10 );
+
+johnAthlete6.calculateAge();
+johnAthlete6.wonMedal();
+
+
 const parks = [
 	{
 		name: "Green Park",
@@ -850,30 +922,30 @@ const parks = [
 ];
 
 const calcSize = function( km ) {
-	let size;
+	let streetSize = "normal";
 
 	switch ( km ) {
 		case ( km > 20 ):
-			size = huge;
+			streetSize = "huge";
 			break;
 		case ( km > 15 ):
-			size = big;
+			streetSize = "big";
 			break;
 		case ( km > 10 ):
-			size = normal;
+			streetSize = "normal";
 			break;
 		case ( km > 5 ):
-			size = small;
+			streetSize = "small";
 			break;
 		case ( km > 0 ):
-			size = tiny;
+			streetSize = "tiny";
 			break;
 		default:
-			size = normal;
+			streetSize = "normal";
 			break;
 	}
 
-	console.log( ` ${ name } is a ${ size } street.`)
+	console.log( ` ${ name } is a ${ size } street.` );
 };
 
 
@@ -947,9 +1019,9 @@ const parksReport = function( parkArr ) {
 const streetSize = function( streetArr ) {
 	console.log( `Streets Report:` );
 	let streetLengths = streets.map( el => this.length );
-	console.log( `Our ${ streets.length } streets have a total length of ${  } km, with an average of ${  } km.`);
+	console.log( `Our ${ streets.length } streets have a total length of ${ 5 } km, with an average of ${ 10 } km.` );
 	for ( let i = 0; i < streets.length; i++ ) {
-		console.log( `${ streetArr[i].name }, built in ${ streetArr[i].dateBuilt }, is a ${  } street.` );
+		console.log( `${ streetArr[i].name }, built in ${ streetArr[i].dateBuilt }, is a ${ normal } street.` );
 	}
 };
 
