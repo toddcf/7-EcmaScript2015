@@ -906,14 +906,25 @@ const allParks = [
 ];
 
 // Construct the streets:
-const huntingtonBlvd = new Street( "Huntington Blvd", 1949, 14 );
-const evergreenStreet = new Street( "Evergreen Street", 1951, 7 );
-const alpineRd = new Street( "Alpine Road", 1999, 10 );
-const constellationCircle = new Street( "Constellation Circle", 2001, 12 );
+const allStreets = [
+	new Street( "Huntington Blvd", 1949, 14, 5 ),
+	// No size argument on Evergreen, just to test the default parameter:
+	new Street( "Evergreen Street", 1951, 7 ),
+	new Street( "Alpine Road", 1999, 10, 2 ),
+	new Street( "Constellation Circle", 2001, 12, 1 )
+];
 
+function parksReport( p ) {
 
-johnAthlete6.calculateAge();
-johnAthlete6.wonMedal();
+};
+
+function streetsReport( s ) {
+
+};
+
+parksReport( allParks );
+streetsReport( allStreets );
+
 
 
 
@@ -965,9 +976,6 @@ const streetSize = function( streetArr ) {
 
 
 
-
-parksReport( parks );
-// streetSize( streets );
 
 
 
