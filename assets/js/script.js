@@ -889,10 +889,6 @@ class Street extends Element {
 		console.log( `${ this.name }, built in ${ this.buildYear }, is a ${ classification.get( this.size ) } street.` );
 	}
 
-	// wonMedal() {
-		// this.medals++;
-		// console.log( this.medals );
-	// }
 }
 
 // Construct the parks:
@@ -960,11 +956,11 @@ function streetsReport( s ) {
 	// Our 4 streets have a total length of 7.1 km, with an average of 1.775 km.
 
 	// Street size classification.
+	s.forEach( el => el.classifyStreet() );
 };
 
 parksReport( allParks );
 streetsReport( allStreets );
-
 
 
 
