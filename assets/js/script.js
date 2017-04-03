@@ -935,14 +935,16 @@ function parksReport( p ) {
 	// Average Age:
 
 	// Before we can calculate the AVERAGE AGE, we must first calculate all the ages.
-
+	const ages = p.map( el => ( now - el.buildYear) );
 	// Now we can call the external function that calculates averages. (Use destructuring to save two values from an array into one variable.)
-	const [ totalAge, avgAge ] = calcAvg();
+	const [ totalAge, avgAge ] = calcAvg( ages );
+	console.log( `Our ${ p.length } parks have an average age of ${ avgAge } years.` );
 
+	/*
 	if ( this.trees > 1000 ) {
 			console.log( `${ this.name } has more than 1,000 trees.` );
 	}
-	console.log( `Our ${ allParks.length } parks have an average age of ${ ( now - parkArr[i].foundingDate ) / allParks.length } years.` );
+	*/
 };
 
 function streetsReport( s ) {
