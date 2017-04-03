@@ -873,6 +873,7 @@ class Park extends Element {
 // Always start out by saying the sublcass "extends" the superclass:
 class Street extends Element {
 	// Default parameter for size is set to 3, or "normal".
+	// Therefore, we won't have to pass a value in for size.
 	constructor ( name, buildYear, length, size = 3 ) {
 		// Saying "super" will call the super class. List only the paramaters of the super class.
 		super ( name, buildYear );
@@ -888,6 +889,7 @@ class Street extends Element {
 		classification.set( 3, "normal" );
 		classification.set( 4, "big" );
 		classification.set( 5, "huge" );
+		console.log( `${ this.name }, built in ${ this.buildYear }, is a ${ normal } street.` );
 	}
 
 	// wonMedal() {
@@ -913,32 +915,6 @@ johnAthlete6.wonMedal();
 
 
 
-const calcSize = function( km ) {
-	let streetSize = "normal";
-
-	switch ( km ) {
-		case ( km > 20 ):
-			streetSize = "huge";
-			break;
-		case ( km > 15 ):
-			streetSize = "big";
-			break;
-		case ( km > 10 ):
-			streetSize = "normal";
-			break;
-		case ( km > 5 ):
-			streetSize = "small";
-			break;
-		case ( km > 0 ):
-			streetSize = "tiny";
-			break;
-		default:
-			streetSize = "normal";
-			break;
-	}
-
-	console.log( ` ${ name } is a ${ size } street.` );
-};
 
 
 // With arrow function, you CAN use the "this" keyword because it shares the lexical "this" keyword of its surroundings:
@@ -979,9 +955,6 @@ const streetSize = function( streetArr ) {
 	console.log( `Streets Report:` );
 	let streetLengths = streets.map( el => this.length );
 	console.log( `Our ${ streets.length } streets have a total length of ${ 5 } km, with an average of ${ 10 } km.` );
-	for ( let i = 0; i < streets.length; i++ ) {
-		console.log( `${ streetArr[i].name }, built in ${ streetArr[i].dateBuilt }, is a ${ normal } street.` );
-	}
 };
 
 
