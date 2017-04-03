@@ -828,6 +828,9 @@ Evergreen Street, built in 2008, is a small street.
 Sunset Blvd, built in 1982, is a huge street.
 */
 
+// Store current year in a variable so we can use it to calculate ages later:
+const now = new Date().getFullYear();
+
 // Create a superclass that contains the name and the buildYear, since both parks and streets have these elements.
 // Then create subclasses for parks and streets to handle their unique elements.
 
@@ -861,12 +864,6 @@ class Park extends Element {
 	treeDensity() {
 		const density = this.trees / this.area;
 		console.log( `${ this.name } has a tree density of ${ density } trees per square km.` );
-		/*
-		if ( this.trees > 1000 ) {
-			console.log( `${ this.name } has more than 1,000 trees.` );
-		}
-		*/
-	}
 	}
 }
 
@@ -915,7 +912,16 @@ const allStreets = [
 ];
 
 function parksReport( p ) {
+	console.log( `Parks Report:`);
+	// We want the tree density for each park, so use the forEach method to loop through the allParks array.
+	// We only want the current element, so use el.
+	// And for that el, call the treeDensity method:
+	p.forEach( el => el.treeDensity() );
 
+	if ( this.trees > 1000 ) {
+			console.log( `${ this.name } has more than 1,000 trees.` );
+	}
+	console.log( `Our ${ allParks.length } parks have an average age of ${ ( now - parkArr[i].foundingDate ) / allParks.length } years.` );
 };
 
 function streetsReport( s ) {
@@ -945,11 +951,8 @@ const box6 = {
 
 
 
-const now = new Date().getFullYear();
 
-const parksReport = function( parkArr ) {
-	const numParks = parkArr.length;
-	console.log( `Parks Report:`);
+
 	
 	// Average age of parks:
 	/*
@@ -960,9 +963,9 @@ const parksReport = function( parkArr ) {
 	}
 	
 	console.log( parkAges );
-	// console.log( `Our ${ numParks } parks have an average age of ${ ( now - parkArr[i].foundingDate ) / numParks } years.` );
+	
 	*/
-};
+
 
 const streetSize = function( streetArr ) {
 	console.log( `Streets Report:` );
