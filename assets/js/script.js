@@ -940,11 +940,11 @@ function parksReport( p ) {
 	const [ totalAge, avgAge ] = calcAvg( ages );
 	console.log( `Our ${ p.length } parks have an average age of ${ avgAge } years.` );
 
-	/*
-	if ( this.trees > 1000 ) {
-			console.log( `${ this.name } has more than 1,000 trees.` );
-	}
-	*/
+	// If park has more than 1,000 trees:
+	// Get all of the numbers of trees into an array, and then use findIndex. Can "chain" these methods on the same line.
+	const grand = p.map( el => el.trees ).findIndex( el => el >= 1000 );
+	console.log( `${ p[grand].name } has more than 1,000 trees.` );
+
 };
 
 function streetsReport( s ) {
