@@ -934,7 +934,7 @@ function parksReport( p ) {
 
 	// Average Age:
 
-	// Before we can calculate the AVERAGE AGE, we must first calculate all the ages.
+	// Before we can calculate the AVERAGE AGE, we must first calculate all the ages and "map" them to their own array.
 	const ages = p.map( el => ( now - el.buildYear) );
 	// Now we can call the external function that calculates averages. (Use destructuring to save two values from an array into one variable.)
 	const [ totalAge, avgAge ] = calcAvg( ages );
@@ -949,6 +949,17 @@ function parksReport( p ) {
 
 function streetsReport( s ) {
 	console.log( `Streets Report:` );
+
+	// Total and average street lengths.
+	
+	// First we need to "map" the lengths to their own array.
+	const treeLengths = s.map( el => el.length );
+	// Then we can calculate the average.
+	const [ totalLength, avgLength ] = calcAvg( treeLengths );
+	console.log( `Our ${ s.length } streets have a total length of ${ totalLength } km, with an average length of ${ avgLength } km.` );
+	// Our 4 streets have a total length of 7.1 km, with an average of 1.775 km.
+
+	// Street size classification.
 };
 
 parksReport( allParks );
