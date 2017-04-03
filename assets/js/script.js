@@ -872,11 +872,22 @@ class Park extends Element {
 
 // Always start out by saying the sublcass "extends" the superclass:
 class Street extends Element {
-	constructor ( name, buildYear, streetLength ) {
+	// Default parameter for size is set to 3, or "normal".
+	constructor ( name, buildYear, length, size = 3 ) {
 		// Saying "super" will call the super class. List only the paramaters of the super class.
 		super ( name, buildYear );
-		this.streetLength = streetLength;
-		// this.size = 
+		this.length = length;
+		this.size = size;
+	}
+
+	classifyStreet() {
+		const classification = new Map();
+		// Set classifications for all street sizes by number:
+		classification.set( 1, "tiny" );
+		classification.set( 2, "small" );
+		classification.set( 3, "normal" );
+		classification.set( 4, "big" );
+		classification.set( 5, "huge" );
 	}
 
 	// wonMedal() {
@@ -962,14 +973,6 @@ const parksReport = function( parkArr ) {
 	console.log( parkAges );
 	// console.log( `Our ${ numParks } parks have an average age of ${ ( now - parkArr[i].foundingDate ) / numParks } years.` );
 	*/
-	// Tree density:
-	for ( let i = 0; i < parkArr.length; i++ ) {		
-		console.log( `${ parkArr[i].name } has a tree density of ${ ( parkArr[i].trees / parkArr[i].area ) } trees per square km.` );
-		if ( parkArr[i].trees > 1000 ) {
-			console.log( `${ parkArr[i].name } has more than 1,000 trees.`);
-		}
-	}
-		
 };
 
 const streetSize = function( streetArr ) {
