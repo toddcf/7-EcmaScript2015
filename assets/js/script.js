@@ -911,12 +911,33 @@ const allStreets = [
 	new Street( "Constellation Circle", 2001, 12, 1 )
 ];
 
+
+function calcAvg( arr ) {
+	// Use "reduce" to loop through an array and accumulate all the values into a single value.
+	// Put a callback function inside the reduce method:
+	// We also have access to the previous value. So to add them all up, just add the previous value with the current value.
+	// "Index" is the position at which we want to start in the array, which in this case is 0.
+	const sum = arr.reduce( ( prev, cur, index ) => prev + cur, 0 );
+
+	// To find the average, divide the sum we just calculated by the length of the array.
+	return [ sum, sum / arr.length ];
+
+};
+
 function parksReport( p ) {
 	console.log( `Parks Report:`);
-	// We want the tree density for each park, so use the forEach method to loop through the allParks array.
+	// Tree Density:
+	// Use the forEach method to loop through the allParks array.
 	// We only want the current element, so use el.
 	// And for that el, call the treeDensity method:
 	p.forEach( el => el.treeDensity() );
+
+	// Average Age:
+
+	// Before we can calculate the AVERAGE AGE, we must first calculate all the ages.
+
+	// Now we can call the external function that calculates averages. (Use destructuring to save two values from an array into one variable.)
+	const [ totalAge, avgAge ] = calcAvg();
 
 	if ( this.trees > 1000 ) {
 			console.log( `${ this.name } has more than 1,000 trees.` );
