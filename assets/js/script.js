@@ -948,7 +948,7 @@ function parksReport( p ) {
 };
 
 function streetsReport( s ) {
-
+	console.log( `Streets Report:` );
 };
 
 parksReport( allParks );
@@ -959,42 +959,6 @@ streetsReport( allStreets );
 
 
 
-// With arrow function, you CAN use the "this" keyword because it shares the lexical "this" keyword of its surroundings:
-const box6 = {
-	color: "green",
-	position: 1,
-	clickMe: function() {
-		document.querySelector( ".green" ).addEventListener( "click", () => {
-			var str = "This is box number " + this.position + ", and it is " + this.color + ".";
-			alert( str );
-		});
-	}
-};
-
-
-
-
-
-
-	
-	// Average age of parks:
-	/*
-	for ( let i = 0; i < parkArr.length; i++ ) {
-		// Map park ages to new array.
-		// Then get the sum of that array.
-		let parkAges = parkArr.map( parkArr[i].foundingDate => now - parkArr[i].foundingDate );
-	}
-	
-	console.log( parkAges );
-	
-	*/
-
-
-const streetSize = function( streetArr ) {
-	console.log( `Streets Report:` );
-	let streetLengths = streets.map( el => this.length );
-	console.log( `Our ${ streets.length } streets have a total length of ${ 5 } km, with an average of ${ 10 } km.` );
-};
 
 
 
