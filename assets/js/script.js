@@ -889,7 +889,7 @@ class Street extends Element {
 		classification.set( 3, "normal" );
 		classification.set( 4, "big" );
 		classification.set( 5, "huge" );
-		console.log( `${ this.name }, built in ${ this.buildYear }, is a ${ normal } street.` );
+		console.log( `${ this.name }, built in ${ this.buildYear }, is a ${ classification.get( this.size ) } street.` );
 	}
 
 	// wonMedal() {
@@ -899,9 +899,11 @@ class Street extends Element {
 }
 
 // Construct the parks:
-const greenPark = new Park( "Green Park", 1963, 2, 80 );
-const chillPark = new Park( "Chill Park", 1979, 5, 120 );
-const tranquilityPark = new Park( "Tranquility Park", 1983, 19, 1239 );
+const allParks = [
+	new Park( "Green Park", 1963, 2, 80 ),
+	new Park( "Chill Park", 1979, 5, 120 ),
+	new Park( "Tranquility Park", 1983, 19, 1239 )
+];
 
 // Construct the streets:
 const huntingtonBlvd = new Street( "Huntington Blvd", 1949, 14 );
